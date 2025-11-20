@@ -53,9 +53,88 @@
 
 <script type="text/javascript">
 
+    function displayArray (obj) {
+    let out = 'Contenu du tableau :\n\n';
+    for (let i in obj) {
+        out += "index : " + i + " -> valeur : " + obj[i] + "\n";
+    }
+
+    alert(out);
+    }
+
     function countWords() {
         // CODE HERE ! 
+
+        sentence = document.getElementById("sentence").value ;
+        console.log(sentence) ;
+
+        let table = sentence.split(' ') ;
+        console.log(table) ;
+        
+        const espace = " " // espace
+        let tabl1 = [] // tableau de données
+        let tabl2 = [] // tableau d'espace 
+        let tablshift = [] // poubelle de tabl1 ?
+        /* 
+            pdt que table n'est pas vide
+            tant que shift() n'est pas un ' ' mettre dans tableau 1
+                 si shift est un ' ' mettre dans tableau 2 
+         
+
+        while (table.length != 0) {
+            if (table[0] != espace) {
+                tabl1.push(table[0]) ;
+                tablshift = table.shift() ;
+                console.log(table);
+                console.log(tabl1);
+            } else {
+                tabl2.push(table[0]) ;
+                tablshift = table.shift() ;
+                console.log(table);
+                console.log(tabl2)
+            }           
+        }
+            
+            
+            for (i = table.length, i > 0, i-- )
+            if (table[0] != espace) {
+                tabl1.push(table[0]) ;
+                tablshift = table.shift() ;
+                console.log(table);
+                console.log(tabl1);
+            } else {
+                tabl2.push(table[0]) ;
+                tablshift = table.shift() ;
+                console.log(table);
+                console.log(tabl2)
+            }
+
+         */
+
+ 
+        do {
+            if (table[0] != espace) {
+                tabl1.push(table[0]) ;
+                tablshift = table.shift() ;
+                console.log(table[0]);
+                console.log(tabl1[0]);
+                console.log(table.length);
+                console.log(table);
+            } else {
+                tabl2.push(table[0]) ;
+                tablshift = table.shift() ;
+/*                 console.log(table.length);
+                console.log(table);
+                console.log(tabl2); */
+            }
+        } while ( table.length != 0)
+            
+
     }
+
+
+
+
 
 </script>
 </body>

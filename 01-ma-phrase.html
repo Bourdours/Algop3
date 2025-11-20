@@ -56,6 +56,38 @@
 
     function analyze() {
         // CODE HERE !
+
+        let sentence = document.getElementById("sentence").value ;
+        console.log(sentence) ;
+
+        let table = sentence.split('') // sépraration phrase en tableau par espace
+        console.log(table)
+/*
+        let length = table.length // récupération de la longueur
+        console.log(length)
+
+        let tablerest = table.splice(3)  // division table par les 3 premiers
+        console.log(table)
+        console.log(tablerest)
+ */
+
+        let tablefin = [] ;
+
+        if (sentence.length >= 5){ //condition pour +5 caractères
+            console.log(sentence[4]) ; // le 5eme caratères
+            let tablest = table.slice(0, 3); // les 3 premiers caractères
+            console.log(tablest) ;
+            let tableend = table.slice(-3); // les trois derniers caractères
+            console.log(tableend);
+            tablefin.push(sentence.length, sentence[5], table.slice(0, 3), table.slice(-3));
+            console.log(tablefin);
+
+            displayArray(tablefin)
+
+        }else { 
+            console.log(sentence.length)
+        }
+
     }
 
 </script>
