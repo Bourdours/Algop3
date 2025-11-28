@@ -55,7 +55,7 @@
     </div>
 
     <label>Nouvelle note ?</label>
-    <input type="text" id="note" placeholder="Nouvelle note (optionnelle)"/>
+    <input type="number" id="note" placeholder="Nouvelle note (optionnelle)"/>
     <button type="button" class="btn btn-primary" onclick="refreshAverage()">
         (Re)calculer la moyenne
     </button>
@@ -65,6 +65,7 @@
 
     // notes de départ
     let notes = [8.75, 14, 13, 5.5];
+    
 
     /*
      * La fonction "avearge" calcule la moyenne des notes contenues dans un tableau 
@@ -73,19 +74,32 @@
      * Retour : la moyenne calculée
      */
 
-    function average() {
-        // CODE HERE !
-
+    function average(mesNotes) {
+        let somme = 0 ;
+        mesNotes.forEach(note => { 
+            somme += note;
+   }) ;
+        let moyenne = somme / mesNotes.length ;
+        console.log(`average::${moyenne.toFixed(2)}`) ;
+        return moyenne ;
     }
-    /*
-     * Fonction appelée lors du 'clic' sur le bouton
-     * Parameters: 
-     * Return:
-     */
+    
+
 
     function refreshAverage() {
-        // CODE HERE !
-
+        let nouvnote = parseInt(document.getElementById("note").value) ;
+        console.log(`Nouvelle note : ${nouvnote}`);
+        
+        if (nouvnote <= 20  
+            && nouvnote >= 0){
+            notes.push(nouvnote);
+            console.log(`Tableau 2 : ${notes}`);
+            let moyenne = average(notes) ;
+            displayArray(notes) ;
+            alert("Votre moyenne est :" + moyenne.toFixed(2))
+        } else {
+            alert("Renseignez uniquement des notes numériques inférieures à 20.") ;
+        }
     }
 
 </script>
