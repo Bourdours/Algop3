@@ -31,7 +31,7 @@
         <p class="text-success">average (notes) affichera 11.21</p>
     </div>
 
-    <button type="button" class="btn btn-primary" onclick="average(notes)">
+    <button type="button" class="btn btn-primary" onclick="average(notes) ; average2(notes)">
         Calculer la moyenne
     </button>
 </div>
@@ -40,15 +40,29 @@
 
     // Tableau des notes obtenues
     const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
-
+    
     /*
-     * Ici le commentaire sur la fonction average...
-     */
+    * Ici le commentaire sur la fonction average...
+    */
+   
+   function average(noteArray) {
+    let calcul = 0;
+    for (let i = 0; i < noteArray.length ; i ++){
+        calcul += noteArray[i] ;
+    }  
+    let moyenne = calcul / noteArray.length ;
+    console.log(moyenne.toFixed(2)) ;
+   }
 
-    function average(noteArray) {
-        // CODE HERE !
-        
-    }
+   function average2(noteArray){
+        let somme = 0 ;
+        noteArray.forEach(note => { 
+            somme += note;
+   }) ;
+        let moyenne = somme / noteArray.length ;
+        console.log(moyenne.toFixed(2))
+
+   }
 
 
 </script>
