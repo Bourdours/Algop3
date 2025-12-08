@@ -71,23 +71,6 @@
 
     let groupeEleves = [];
     
-    // -----------------------------------------------------
-    /*
-     * --- Courte description de la fonction ICI ---
-     * Paramètres : --- paramètres ICI si il y en a ---
-     *  
-     * Retour : --- retour de la fonction ICI ---
-     */
-
-    function genererNote (min, max) { 
-        // CODE HERE
-        return Math.round(Math.random() * (max - min) + min); // nombre aléatoire entre 0(min) et 20(max)
-
-    }
-
-
-    // -----------------------------------------------------
-
     // création des 3 élèves et rangement dans le tableau des élèves
     
     let pierreDupont = new Eleve("Dupont", "Pierre", "Kercode");
@@ -95,7 +78,7 @@
     let johnHunter = new Eleve("John", "Hunter", "Kercode") ;
 
     groupeEleves.push(pierreDupont);
-    groupeEleves.push(marieFontaine);
+    groupeEleves.push(marieFontaine); // ajout de "Eleve" dans le tableau groupe
     groupeEleves.push(johnHunter);
 
     console.log(groupeEleves) ;
@@ -127,15 +110,18 @@
 
     console.log("Verification état %o", groupeEleves) ;
 
-    groupeEleves.forEach(eleve => eleve.notes.algorithmique.push(genererNote(0,20))) ;
-    
+/*   groupeEleves.forEach(eleve => eleve.notes.algorithmique.push(genererNote(0,    20))) ; // pour chaque eleve on rajoute une note aleatoire selon la fonction
+*/
+    ajoutNote(groupeEleves,"algorithmique");
+
     console.log("generation note %o", groupeEleves);
     console.log(pierreDupont.notes.algorithmique);
     console.log(marieFontaine.notes.algorithmique);
     console.log(johnHunter.notes.algorithmique);
 
     // moyenne du groupe en algorithmique
-    let somme = 0;
+
+/*     let somme = 0;
     let  groupeElevesAlgorithmique = [];
 
     
@@ -149,21 +135,27 @@
 
 
     
-/*     groupeEleves.forEach(eleve => { 
+    groupeEleves.forEach(eleve => { 
         somme += parseInt(eleve.notes.algorithmique) ; // on additionne les notes par eleve 
         // pb: ne prends que la premiere valeur
         }); 
-*/
+
        
     groupeElevesAlgorithmiqueFlat.forEach(note => // on additionne chaque element du tableau plat
         somme += note
     )
-
     console.log(somme);
-    let moyenne = somme / groupeElevesAlgorithmiqueFlat.length ; 
-    console.log(moyenne) ;
+*/
+    notesEleve(groupeEleves,"algorithmique");
+    console.log(notesEleve(groupeEleves,"algorithmique"));
 
     
+    noteGlobal(groupeEleves,"algorithmique");
+
+
+   /*  let moyenne = somme / groupeElevesAlgorithmiqueFlat.length ;  */
+        average(totalNote)
+
     
 
 </script>
