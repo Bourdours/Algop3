@@ -8,6 +8,7 @@
     <title>Exo d'Algo(Part 4) - #01 - Les élèves</title>
     <link href="./css/style.css" rel="stylesheet" />
     <script type="text/javascript" src="eleve.js"></script>
+    <script type="text/javascript" src="function.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -63,11 +64,15 @@
                 <p>N'hésitez pas à utiliser cette console pour interroger les objets, 
                 pour débuguer ou par curiosité !</p>
             </li>
+            <input type="button" value="a" onclick="">
         </ul>
     </div>
 
+
+
     
 <script type="text/javascript">
+
 
     let groupeEleves = [];
     
@@ -110,9 +115,9 @@
 
     console.log("Verification état %o", groupeEleves) ;
 
-/*   groupeEleves.forEach(eleve => eleve.notes.algorithmique.push(genererNote(0,    20))) ; // pour chaque eleve on rajoute une note aleatoire selon la fonction
-*/
-    ajoutNote(groupeEleves,"algorithmique");
+    /*   groupeEleves.forEach(eleve => eleve.notes.algorithmique.push(genererNote(0,    20))) ; // pour chaque eleve on rajoute une note aleatoire selon la fonction
+    */
+    ajoutNoteAlea(groupeEleves,"algorithmique");
 
     console.log("generation note %o", groupeEleves);
     console.log(pierreDupont.notes.algorithmique);
@@ -121,7 +126,7 @@
 
     // moyenne du groupe en algorithmique
 
-/*     let somme = 0;
+    /*     let somme = 0;
     let  groupeElevesAlgorithmique = [];
 
     
@@ -145,18 +150,35 @@
         somme += note
     )
     console.log(somme);
-*/
-    notesEleve(groupeEleves,"algorithmique");
-    console.log(notesEleve(groupeEleves,"algorithmique"));
-
     
-    noteGlobal(groupeEleves,"algorithmique");
+    let moyenne = somme / groupeElevesAlgorithmiqueFlat.length ;  */
 
 
-   /*  let moyenne = somme / groupeElevesAlgorithmiqueFlat.length ;  */
-        average(totalNote)
 
+
+    let noteEleve = notesEleve(groupeEleves,"algorithmique");
+    console.log(noteEleve);
+
+    let noteTotale = noteGlobal(groupeEleves,"algorithmique");
+    console.log(noteTotale);
+
+
+    average(noteEleve);
+    console.log(average(noteEleve));
+
+
+    pierreDupont.bonjour();
+
+    pierreDupont.ajoutNote("algorithmique",16);
+    console.log(pierreDupont.notes.algorithmique);
     
+    console.log(pierreDupont.notes);
+
+
+    pierreDupont.ajoutMatiere("art");
+    console.log(pierreDupont.notes);
+
+
 
 </script>
 </body>
